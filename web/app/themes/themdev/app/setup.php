@@ -8,6 +8,9 @@ namespace App;
 
 use function Roots\bundle;
 
+require_once('PostTypes/Event.php');
+require_once('PostTypes/professor.php');
+require_once('PostTypes/subject.php');
 /**
  * Register the theme assets.
  *
@@ -25,9 +28,6 @@ add_action('wp_enqueue_scripts', function () {
 add_action('enqueue_block_editor_assets', function () {
   bundle('editor')->enqueue();
 }, 100);
-
-
-
 
 /**
  * Register the initial theme setup.
@@ -129,51 +129,3 @@ add_action('widgets_init', function () {
     'id' => 'sidebar-footer',
   ] + $config);
 });
-
-/*Custom Post type start*/
-
-function cw_post_type_news()
-{
-}
-add_action('init', function () {
-
-  $supports = array(
-    'title', // post title
-    'editor', // post content
-    'author', // post author
-    'thumbnail', // featured images
-    'excerpt', // post excerpt
-    'custom-fields', // custom fields
-    'comments', // post comments
-    'revisions', // post revisions
-    'post-formats', // post formats
-  );
-
-  $labels = array(
-    'name' => _x('news', 'plural'),
-    'singular_name' => _x('news', 'singular'),
-    'menu_name' => _x('news', 'admin menu'),
-    'name_admin_bar' => _x('news', 'admin bar'),
-    'add_new' => _x('Add New', 'add new'),
-    'add_new_item' => __('Add New news'),
-    'new_item' => __('New news'),
-    'edit_item' => __('Edit news'),
-    'view_item' => __('View news'),
-    'all_items' => __('All news'),
-    'search_items' => __('Search news'),
-    'not_found' => __('No news found.'),
-  );
-
-  $args = array(
-    'supports' => $supports,
-    'labels' => $labels,
-    'public' => true,
-    'query_var' => true,
-    'rewrite' => array('slug' => 'news'),
-    'has_archive' => true,
-    'hierarchical' => false,
-  );
-  register_post_type('news', $args);
-});
-
-/*Custom Post type end*/
