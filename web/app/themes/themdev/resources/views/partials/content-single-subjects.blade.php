@@ -39,7 +39,6 @@
     </div>
     <div class="flex flex-wrap -m-4">
     <?php 
-      $relatedProfessors = get_field('professor');
       foreach ($relatedProfessors as $key => $professor) { ?>
         <div class="p-4 lg:w-1/2">
           <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
