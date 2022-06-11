@@ -1,3 +1,4 @@
+<h1>content-single.blade.php</h1>
 <article @php(post_class())>
   <header>
     <h1 class="entry-title">

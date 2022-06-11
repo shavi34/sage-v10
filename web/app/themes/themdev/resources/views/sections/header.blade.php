@@ -17,12 +17,14 @@
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
       </svg>
-      <span class="ml-3 text-xl">Tailblocks</span>
+      <a href="<?php echo get_home_url(); ?>" >
+      <span class="ml-3 text-xl">University of Pinwala</span>
+      </a>
     </a>
     <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
-      <a class="mr-5 hover:text-gray-900">First Link</a>
-      <a class="mr-5 hover:text-gray-900">Second Link</a>
-      <a class="mr-5 hover:text-gray-900">Third Link</a>
+      <a href="<?php echo get_post_type_archive_link( "professors" ); ?>" class="mr-5 hover:text-gray-900">Professors</a>
+      <a href="<?php echo get_post_type_archive_link("subjects"); ?>" class="mr-5 hover:text-gray-900">Subjects</a>
+      <a class="mr-5 hover:text-gray-900">Events</a>
       <a class="mr-5 hover:text-gray-900">Fourth Link</a>
     </nav>
     <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
