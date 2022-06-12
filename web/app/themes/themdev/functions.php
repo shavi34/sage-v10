@@ -75,23 +75,4 @@ collect(['setup', 'filters'])
 | for Sage when booting.
 |
 */
-add_action('init', function () {
-  register_post_type('event', array(
-    'capability_type' => 'event', // enable to set user role permissions.
-    'map_meta_cap' => true, // enable to set user role permissions.
-    'show_in_rest' => true, // enable gurtenburg on custom post type
-    'supports' => array('title', 'editor', 'excerpt'),
-    'has_archive' => true,
-    'rewrite' => array('slug' => 'events'),
-    'public' => true,
-    'labels' => array(
-      'name' => 'Events',
-      'add_new_item' => 'Add New Event',
-      'edit_item' => 'Edit Event',
-      'all_items' => 'All Events',
-      'singular_name' => 'Event'
-    ),
-    'menu_icon' => 'dashicons-calendar',
-  ));
-});
 add_theme_support('sage');

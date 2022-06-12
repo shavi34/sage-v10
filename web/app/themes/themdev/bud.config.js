@@ -26,7 +26,7 @@ module.exports = async (app) => {
      * when modified.
      */
     .watch("resources/views/**/*", "app/**/*")
-
+    .setPublicPath(app.isDevelopment ? "/" : "")
     /**
      * Target URL to be proxied by the dev server.
      *

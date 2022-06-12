@@ -1,9 +1,4 @@
 import { domReady } from "@roots/sage/client";
-import HelloWorld from "./hello-world.vue";
-import { createApp } from "vue";
-
-const app = createApp(HelloWorld);
-app.mount("#hello-world");
 /**
  * app.main
  */

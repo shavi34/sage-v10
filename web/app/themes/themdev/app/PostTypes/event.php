@@ -32,16 +32,17 @@ function register_event_post_type()
     'supports' => $supports,
     'labels' => $labels,
     'public' => true,
-    // 'query_var' => true,
+    'publicly_queryable' => true,
+    'query_var' => true,
     'rewrite' => array('slug' => 'events'),
     'has_archive' => true,
-    // 'hierarchical' => false,
+    'hierarchical' => false,
     'menu_icon' => 'dashicons-calendar',
     'show_in_admin_bar' => true,
     'show_in_nav_menus' => true,
-    // 'capability_type' => 'event', // enable to set user role permissions.
+    'capability_type' => 'post', // enable to set user role permissions.
     // 'map_meta_cap' => true, // enable to set user role permissions.
-    // 'show_in_rest' => true, // enable gurtenburg on custom post type
+    'show_in_rest' => true, // enable gurtenburg on custom post type
   );
   register_post_type('events', $args);
 }
